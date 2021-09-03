@@ -7,7 +7,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "tsc -w & tsc-alias -w",
-    "build": "yarn clean && ./node_modules/.bin/tsc && chmod +x ./dist/index.js",
+    "build": "yarn clean && tsc && tsc-alias && chmod +x ./dist/index.js",
     "clean": "rm -rf ./bin"
   },
   "devDependencies": {

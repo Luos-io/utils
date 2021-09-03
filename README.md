@@ -1,4 +1,4 @@
-# LUOS CLI
+# LUOS UTILS
 
 ## Development
 
@@ -9,4 +9,8 @@
 
 ### Installation
 
-1. `yarn install`
+Install the dependancies with the command : `yarn install`.
+
+### Run
+
+Execute the command : `yarn dev`.

@@ -1,5 +1,5 @@
-import { logger } from 'logger/index';
+import { Logger } from 'logger/index';
 
-export { logger };
-export const utils = { logger };
+export { Logger };
+export const utils = { Logger };
 export default utils;

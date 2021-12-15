@@ -1,4 +1,4 @@
-import chalk, { Chalk } from 'chalk';
+import chalk from 'chalk';
 
 export enum LogLevel {
   INFO = 'green',
@@ -7,24 +7,59 @@ export enum LogLevel {
   DEBUG = 'blue',
 }
 
-let _tags: string[] = [];
+export class Logger {
+  private _tags: string[] = [];
+  private _log(msg: string[], logLevel?: LogLevel) {
+    console.log(
+      chalk[logLevel ? logLevel : 'white'](
+        this._tags.map((t) => `[${t}]`),
+        msg.join(' '),
+      ),
+    );
+  }
 
-const _log = (msg: string[], logLevel?: LogLevel) =>
-  console.log(
-    chalk[logLevel ? logLevel : 'white'](
-      _tags.map((t) => `[${t}]`),
-      msg.join(' '),
-    ),
-  );
+  public constructor(_tags: string[] = []) {
+    this._tags = _tags;
+  }
 
-export const logger = {
-  setTags: (tags: string[]) => (_tags = tags),
-  addTags: (tags: string) =>
-    typeof tags === 'string' ? _tags.push(tags) : _tags.concat(tags),
-  log: (...msg: string[]) => _log(msg),
-  info: (...msg: string[]) => _log(msg, LogLevel.INFO),
-  warn: (...msg: string[]) => _log(msg, LogLevel.WARN),
-  error: (...msg: string[]) => _log(msg, LogLevel.ERROR),
-  debug: (...msg: string[]) => _log(msg, LogLevel.DEBUG),
-};
-export default logger;
+  public setTags(tags: string[]) {
+    this._tags = tags;
+  }
+
+  public addTags(tags: string) {
+    if (typeof tags === 'string') {
+      this._tags.push(tags);
+    } else {
+      this._tags.concat(tags);
+    }
+  }
+
+  public log(...msg: string[]) {
+    this._log(msg);
+  }
+
+  public info(...msg: string[]) {
+    this._log(msg, LogLevel.INFO);
+  }
+
+  public warn(...msg: string[]) {
+    this._log(msg, LogLevel.WARN);
+  }
+
+  public error(...msg: string[]) {
+    this._log(msg, LogLevel.ERROR);
+  }
+
+  public debug(...msg: string[]) {
+    this._log(msg, LogLevel.DEBUG);
+  }
+
+  public get tags() {
+    return this._tags;
+  }
+
+  public set tags(tags: string[]) {
+    this._tags = tags;
+  }
+}
+export default Logger;

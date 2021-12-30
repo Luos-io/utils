@@ -1,4 +1,4 @@
-name: Publish
+name: Utils
 
 on:
   push:
@@ -14,5 +14,5 @@ jobs:
 
       - name: Publish
         run: yarn publish --access private
-        with:
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

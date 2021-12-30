@@ -1,5 +1,5 @@
-import { Logger } from 'logger/index';
+import { Logger } from 'logger/index.js';
 
-export { Logger };
+export * from 'logger/index.js';
 export const utils = { Logger };
 export default utils;

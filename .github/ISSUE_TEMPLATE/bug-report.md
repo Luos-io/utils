@@ -1,18 +1,13 @@
 ---
 name: Bug report
 about: Create a bug report to help us improve Luos
-title: "[BUG] "
+title: '[BUG] '
 labels: bug
 assignees: nicolas-rabault
-
 ---
 
 **Describe the bug**
 A clear and concise description of what the bug is.
-
-**Network configuration**
-- Add the routing table or list the nodes and their modules
-- Power input configuration
 
 **How to reproduce the bug**
 Describe thoroughly the steps to reproduce the bug.

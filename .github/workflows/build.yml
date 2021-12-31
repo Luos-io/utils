@@ -1,4 +1,4 @@
-name: Utils
+name: Build
 
 on: [push, workflow_call]
 

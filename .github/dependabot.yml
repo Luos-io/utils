@@ -5,17 +5,17 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: 'npm' # See documentation for possible values
+    directory: '/' # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
     commit-message:
-      prefix: "[NPM]"
-      prefix-development: "[NPM-Dev]"
+      prefix: '[NPM]'
+      prefix-development: '[NPM-Dev]'
     reviewers:
       - 'Luos-web-staff'
     assignees:
       - 'K0rdan'
     labels:
-      - "update"
-      - "dependencies"
+      - 'update'
+      - 'dependencies'

@@ -12,6 +12,10 @@ updates:
     commit-message:
       prefix: "[NPM]"
       prefix-development: "[NPM-Dev]"
+    reviewers:
+      - 'Luos-web-staff'
+    assignees:
+      - 'K0rdan'
     labels:
       - "update"
       - "dependencies"

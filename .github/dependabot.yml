@@ -19,3 +19,6 @@ updates:
     labels:
       - 'update'
       - 'dependencies'
+    ignore:
+      - dependency-name: '@types/node'
+        versions: ['17.x']
